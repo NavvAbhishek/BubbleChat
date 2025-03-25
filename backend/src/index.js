@@ -8,6 +8,8 @@ import { connectDB } from "./lib/db.js"
 const app = express()
 
 const PORT = process.env.PORT
+//? Allow you to extract the JSON data from body
+app.use (express.json()) 
 
 app.use("/api/auth", authRoutes)
 
