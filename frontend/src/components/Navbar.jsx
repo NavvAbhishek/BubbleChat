@@ -1,9 +1,47 @@
-import React from 'react'
+import React from "react";
+import { Settings, User, LogOut } from "lucide-react";
+import { useAuthStore } from "../store/useAuthStore";
+import { Link } from "react-router-dom";
 
-const Navbar = () => {
+function App() {
+  const { logout, authUser } = useAuthStore();
+
   return (
-    <div>Navbar</div>
-  )
+    <nav className="bg-deepBlue text-white p-4 flex items-center justify-between font-sans rounded-md">
+      <div className="text-xl font-bold">Bubble Chat</div>
+
+      <div className="flex items-center space-x-6">
+        <Link to={"/settings"}>
+          <button
+            className="flex items-center space-x-1 hover:text-gray-300 transition-colors duration-200"
+            aria-label="Settings"
+          >
+            <Settings size={21} />
+          </button>
+        </Link>
+        {authUser && (
+          <>
+            <Link to={"/profile"}>
+              <button
+                className="flex items-center space-x-1 hover:text-gray-300 transition-colors duration-200"
+                aria-label="Profile"
+              >
+                <User size={21} />
+              </button>
+            </Link>
+
+            <button
+              onClick={logout}
+              className="flex items-center space-x-1 hover:text-gray-300 transition-colors duration-200"
+              aria-label="Logout"
+            >
+              <LogOut size={21} />
+            </button>
+          </>
+        )}
+      </div>
+    </nav>
+  );
 }
 
-export default Navbar
+export default App;
