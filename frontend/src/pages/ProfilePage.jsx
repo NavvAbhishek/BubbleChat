@@ -1,17 +1,14 @@
 import React, { useState } from "react";
-import { UserCircle, Camera } from "lucide-react";
+import { Camera } from "lucide-react";
 import { useAuthStore } from "../store/useAuthStore";
 import avatarImg from "../assets/avatar.png";
 
 const ProfilePage = () => {
   const userData = {
-    name: "Alex Doe",
-    email: "alex.doe@example.com",
-    profilePhotoUrl: "",
     memberSince: "2023-01-15",
     isActive: true,
     bio: "Loves coding, hiking, and coffee. Exploring the world one line of code at a time.",
-    location: "San Francisco, CA",
+    location: "Sri Lanka",
   };
 
   const formatDate = (dateString) => {
@@ -31,7 +28,7 @@ const ProfilePage = () => {
 
     reader.onload = async () => {
       const base64Image = reader.result;
-      setSelectedImg(base64Image)
+      setSelectedImg(base64Image);
       await updateProfile({ profilePic: base64Image });
     };
   };
