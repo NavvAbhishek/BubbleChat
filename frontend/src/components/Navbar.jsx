@@ -7,7 +7,7 @@ function App() {
   const { logout, authUser } = useAuthStore();
 
   return (
-    <nav className="bg-deepBlue text-white p-4 flex items-center justify-between font-sans rounded-md">
+    <nav className="bg-deepBlue text-white p-4 flex items-center justify-between font-sans">
       <div className="text-xl font-bold">Bubble Chat</div>
 
       <div className="flex items-center space-x-6">
