@@ -8,7 +8,9 @@ function App() {
 
   return (
     <nav className="bg-deepBlue text-white p-4 flex items-center justify-between font-sans">
-      <div className="text-xl font-bold">Bubble Chat</div>
+      <Link to={"/"}>
+        <div className="text-xl font-bold">Bubble Chat</div>
+      </Link>
 
       <div className="flex items-center space-x-6">
         <Link to={"/settings"}>
