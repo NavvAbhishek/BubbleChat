@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import { useChatStore } from "../store/useChatStore";
 import ChatHeader from "./ChatHeader";
+import MessageSkeleton from "./skeletons/MessageSkelton";
+import MessageInput from "./MessageInput";
 
 const ChatContainer = () => {
   const { messages, getMessages, isMessagesLoading, selectedUser } =
@@ -24,6 +26,7 @@ const ChatContainer = () => {
     <div className="flex-1 flex flex-col overflow-auto">
       <ChatHeader />
       <p>messages...</p>
+      <MessageInput/>
     </div>
   );
 };
