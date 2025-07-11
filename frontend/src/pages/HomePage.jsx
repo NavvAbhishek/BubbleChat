@@ -73,7 +73,7 @@ const HomePage = () => {
   ];
 
   return (
-    <div className="container mx-auto px-12 py-12 bg-slate-50 text-slate-800 flex-1 flex items-center justify-center">
+    <div className="px-12 bg-slate-50 text-slate-800 flex-1 flex items-center justify-center">
       <main className="flex-grow flex">
         <div className="container mx-auto py-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 items-center">
